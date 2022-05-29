@@ -126,7 +126,7 @@ Welcome to my personal website, you can interact with the site with bellow comma
 Type 'summary' to display contacts info and summary .
 Type 'linkedin' to open my LinkedIn profile.
 Type 'resume' to open my resume.
-Type 'gui' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.website}" target="_blank">here</a></u> to visit normal website (if you are sick of this back screen).
+Type 'gui' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.website}" target="_blank">here</a></u> to visit normal website (if you are sick of this black screen).
 Type 'help' to see the list of available commands.
 `;
 };
