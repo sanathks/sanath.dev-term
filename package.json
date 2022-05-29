@@ -1,11 +1,11 @@
 {
-  "name": "liveterm",
+  "name": "sanath.dev",
   "version": "0.1.0",
   "license": "MIT",
   "author": {
-    "name": "Vincent Wu",
-    "url": "https://cveinnt.com",
-    "email": "contact@wensenwu.com"
+    "name": "sanath",
+    "url": "https://sanath.dev",
+    "email": "sanath.s@outlook.com"
   },
   "scripts": {
     "dev": "next dev",
