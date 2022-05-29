@@ -5,14 +5,10 @@ import config from '../../../config.json';
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
-  const commands = Object.keys(bin).sort().join(', ');
+  const commands = Object.keys(bin).join(', ');
   var c = '';
   for (let i = 1; i <= Object.keys(bin).sort().length; i++) {
-    if (i % 7 === 0) {
-      c += Object.keys(bin).sort()[i - 1] + '\n';
-    } else {
-      c += Object.keys(bin).sort()[i - 1] + ' ';
-    }
+    c += Object.keys(bin).sort()[i - 1] + '\n';
   }
   return `Welcome! Here are all the available commands:
 \n${c}\n
@@ -23,19 +19,23 @@ Type 'sumfetch' to display summary.
 };
 
 // Redirection
-export const repo = async (args: string[]): Promise<string> => {
-  window.open(`${config.repo}`);
+export const gui = async (args: string[]): Promise<string> => {
+  window.open(`${config.website}`);
   return 'Opening Github repository...';
 };
 
 // About
 export const about = async (args: string[]): Promise<string> => {
-  return `Hi, I am ${config.name}. 
-Welcome to my website!
+  return `Hi, I am ${config.name}. ${config.summary}
+
+Skills: ${config.skills.languages},${config.skills.framework},${config.skills.data}
+
 More about me:
-'sumfetch' - short summary.
+'summary' - short summary.
 'resume' - my latest resume.
-'readme' - my github readme.`;
+'github' - my github
+'email' - to open email client with my email
+`;
 };
 
 export const resume = async (args: string[]): Promise<string> => {
@@ -43,14 +43,6 @@ export const resume = async (args: string[]): Promise<string> => {
   return 'Opening resume...';
 };
 
-// Donate
-export const donate = async (args: string[]): Promise<string> => {
-  return `thank you for your interest. 
-here are the ways you can support my work:
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
-`;
-};
 
 // Contact
 export const email = async (args: string[]): Promise<string> => {
@@ -72,23 +64,8 @@ export const linkedin = async (args: string[]): Promise<string> => {
 
 // Search
 export const google = async (args: string[]): Promise<string> => {
-  window.open(`https://google.com/search?q=${args.join(' ')}`);
-  return `Searching google for ${args.join(' ')}...`;
-};
-
-export const duckduckgo = async (args: string[]): Promise<string> => {
-  window.open(`https://duckduckgo.com/?q=${args.join(' ')}`);
-  return `Searching duckduckgo for ${args.join(' ')}...`;
-};
-
-export const bing = async (args: string[]): Promise<string> => {
-  window.open(`https://bing.com/search?q=${args.join(' ')}`);
-  return `Wow, really? You are using bing for ${args.join(' ')}?`;
-};
-
-export const reddit = async (args: string[]): Promise<string> => {
-  window.open(`https://www.reddit.com/search/?q=${args.join(' ')}`);
-  return `Searching reddit for ${args.join(' ')}...`;
+  window.open(`https://google.com/search?q=${config.name}`);
+  return `Searching google for ${config.name}...`;
 };
 
 // Typical linux commands
@@ -101,16 +78,12 @@ export const whoami = async (args: string[]): Promise<string> => {
 };
 
 export const ls = async (args: string[]): Promise<string> => {
-  return `a
-bunch
-of
-fake
-directories`;
+  return `haha, nice try but this is not real thing ;)`;
 };
 
 export const cd = async (args: string[]): Promise<string> => {
   return `unfortunately, i cannot afford more directories.
-if you want to help, you can type 'donate'.`;
+if you want to help, you share the site.`;
 };
 
 export const date = async (args: string[]): Promise<string> => {
@@ -130,12 +103,11 @@ export const nvim = async (args: string[]): Promise<string> => {
 };
 
 export const emacs = async (args?: string[]): Promise<string> => {
-  return `you know what? just use vscode.`;
+  return `you know what? just use vscode. ;)`;
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
-  window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
-  return `Permission denied: with little power comes... no responsibility? `;
+  return `haha, Nice try but this is not a real thing.... you know`;
 };
 
 // Banner
@@ -151,8 +123,10 @@ export const banner = (args?: string[]): string => {
 :......:::..:::::..::..::::..::..:::::..:::::..:::::..:::::..::...::........:::........:::::...:::::
 Welcome to my personal website, you can interact with the site with bellow commands
 
+Type 'summary' to display contacts info and summary .
+Type 'linkedin' to open my LinkedIn profile.
+Type 'resume' to open my resume.
+Type 'gui' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.website}" target="_blank">here</a></u> to visit normal website (if you are sick of this back screen).
 Type 'help' to see the list of available commands.
-Type 'summary' to display summary.
-Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
 `;
 };
