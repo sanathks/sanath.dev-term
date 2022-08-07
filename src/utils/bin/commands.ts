@@ -107,7 +107,7 @@ export const emacs = async (args?: string[]): Promise<string> => {
 };
 
 export const code  = async (args?: string[]): Promise<string> => {
-  return `LOL, is it real thing? just nvim`;
+  return `Really! Wanna you code on a browser? What's wrong with you all? `;
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
