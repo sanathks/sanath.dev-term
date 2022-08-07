@@ -99,11 +99,15 @@ export const vim = async (args: string[]): Promise<string> => {
 };
 
 export const nvim = async (args: string[]): Promise<string> => {
-  return `'nvim'? too fancy. why not 'emacs'?`;
+  return `'nvim' is too good. <3`;
 };
 
 export const emacs = async (args?: string[]): Promise<string> => {
-  return `you know what? just use vscode. ;)`;
+  return `you know what? just use nvim. ;)`;
+};
+
+export const code  = async (args?: string[]): Promise<string> => {
+  return `LOL, is it real thing? just nvim`;
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
